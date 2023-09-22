@@ -11,7 +11,7 @@ def main():
     )
     
     sim.simulate()
-    sim.animate()
+    sim.show(time_scale = 10, do_daddy_pig=True, do_animation=False)
 
 
 if __name__ == '__main__':
