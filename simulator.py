@@ -40,7 +40,7 @@ class Simulator:
     def initialize_drawing_variables(self) -> None:
         """Initializes a bunch of stuff as instance variables because, quite frankly, I could not be bothered to make specific functions for everything
         """
-        self.display_x, self.display_y = self.display_size = self.display_size
+        self.display_x, self.display_y = self.display_size
         self.h_display_x, self.h_display_y = self.display_x // 2, self.display_y // 2
         
         self.stars_number = round(self.display_x * self.display_y * self.star_density)  # Number of stars
@@ -122,7 +122,7 @@ class Simulator:
         if fps is None:
             fps = 1 / self.DTAU
 
-        self.display_size = display_size
+        self.display_size = [int(d) for d in display_size]
         self.fps = fps
         self.scale = scale
         self.time_scale = time_scale        
