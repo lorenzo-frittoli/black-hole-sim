@@ -78,20 +78,7 @@ class Simulator:
         
         
     def simulate(self) -> None: 
-        """Runs the simulation and updates the internal values
-        """        
-        while self.distances[-1] > self.BLACK_HOLE_RADIUS:  # Until the particle crashes into the black hole
-            # Derivatives
-            dr_dtau = self.get_dr_dtau(self.speeds[-1])
-            dv_dtau = self.get_dv_dtau(self.distances[-1])
-            dphi_dtau = self.get_dphi_dtau(self.distances[-1])
-            dt_dtau = self.get_dt_dtau(self.distances[-1])
-            
-            # new val = old val + dval/dtau * dtau
-            self.speeds.append(self.speeds[-1] + dv_dtau * self.DTAU)
-            self.distances.append(self.distances[-1] + dr_dtau * self.DTAU)
-            self.angles.append(self.angles[-1] + dphi_dtau * self.DTAU)
-            self.times.append(self.times[-1] + dt_dtau * self.DTAU)
+        """Runs the simulation and updates the internal values"""
 
 
     def show(self,
